@@ -10,15 +10,9 @@ namespace MlaCore
       {
       }
 
-      public Document(ILockToken lockToken)
-      {
-         LockToken = lockToken;
-      }
-
       public string Name { get; set; }
 
       private bool published;
-
       /// <summary>
       /// Property can be set to true, but never to false again
       /// </summary>

@@ -36,5 +36,12 @@ namespace MlaCoreTests
          doc.LockToken = token.Object;
          Assert.Equal(token.Object, doc.LockToken);
       }
+
+      [Fact]
+      public void NotAllowToSetLockTokenIfPublished()
+      {
+         var doc = new Document { Published = true };
+         Assert.Throws(typeof(InvalidOperationException), () => doc.LockToken = null);
+      }
    }
 }

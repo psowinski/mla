@@ -22,8 +22,8 @@ namespace MlaCore
 
       public void DeleteDocument(IDocument document)
       {
-         if(document.Published)
-            throw new InvalidOperationException("Cannot delete published document.");
+         if (document.LockToken == null)
+            throw new InvalidOperationException("Cannot delete document without lock.");
          this.repository.Delete(document);
       }
    }

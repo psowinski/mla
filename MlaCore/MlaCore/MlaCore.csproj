@@ -43,6 +43,7 @@
     <Compile Include="Document.cs" />
     <Compile Include="DocumentService.cs" />
     <Compile Include="IDocument.cs" />
+    <Compile Include="IDocumentRepository.cs" />
     <Compile Include="ILockToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

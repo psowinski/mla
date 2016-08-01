@@ -1,4 +1,5 @@
-﻿using MlaCore;
+﻿using System;
+using MlaCore;
 using Moq;
 using Xunit;
 
@@ -22,6 +23,16 @@ namespace MlaCoreTests
          Assert.True(string.IsNullOrEmpty(doc.Name));
          doc.Name = name;
          Assert.Equal(name, doc.Name);
+      }
+
+      [Fact]
+      public void HavePublishedPropertyAsSetButOnlyOneWay()
+      {
+         var doc = new Document();
+         Assert.False(doc.Published);
+         doc.Published = true;
+         Assert.True(doc.Published);
+         Assert.Throws(typeof(InvalidOperationException), () => { doc.Published = false; });
       }
    }
 }

@@ -4,9 +4,15 @@
    {
       public ILockToken LockToken { get; }
 
+      public Document()
+      {
+      }
+
       public Document(ILockToken lockToken)
       {
          LockToken = lockToken;
       }
+
+      public string Name { get; set; }
    }
 }

@@ -2,7 +2,7 @@
 {
    public interface IDocument
    {
-      ILockToken LockToken { get; }
+      ILockToken LockToken { get; set; }
       bool Published { get; set; }
    }
 }

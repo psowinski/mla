@@ -4,7 +4,7 @@ namespace MlaCore
 {
    public class Document : IDocument
    {
-      public ILockToken LockToken { get; }
+      public ILockToken LockToken { get; set; }
 
       public Document()
       {

@@ -34,5 +34,15 @@ namespace MlaCoreTests
          Assert.True(doc.Published);
          Assert.Throws(typeof(InvalidOperationException), () => { doc.Published = false; });
       }
+
+      [Fact]
+      public void HaveVerifiedLockTokenProperty()
+      {
+         var token = new Mock<ILockToken>();
+         var doc = new Document();
+         Assert.Null(doc.LockToken);
+         doc.LockToken = token.Object;
+         Assert.Equal(token.Object, doc.LockToken);
+      }
    }
 }
